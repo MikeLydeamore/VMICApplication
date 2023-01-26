@@ -55,10 +55,14 @@ abm_input_vaccintion <- ages_by_year |>
         time_dose_2 = NA,
         time_dose_3 = NA,
         time_dose_4 = NA
+    ) |>
+    relocate(
+        num_people,
+        .after = everything()
     )
 
 lapply(split(abm_input_vaccintion, abm_input_vaccintion$year), function(df) {
     output_year <- unique(df$year)
     fname = here::here("abm_inputs", paste0("vmic_rollout_", output_year, ".csv"))
-    write_csv(x = df, file = fname)
+    write_csv(x = df |> select(-year), file = fname)
 })
