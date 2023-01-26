@@ -1,0 +1,13 @@
+---
+title: "Agent based model VIMC documentation"
+date: "Last updated: `r Sys.Date()`"
+output: pdf
+---
+    
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+* Age breaks: modelled in 5 year age bands from 0 to 85+. Vaccination in 5 year age bands from 0 to 90+.
+* Initial condition: Varies by run, in three settings: low, medium and high
+* 
