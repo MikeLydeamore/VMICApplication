@@ -10,4 +10,4 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * Age breaks: modelled in 5 year age bands from 0 to 85+. Vaccination in 5 year age bands from 0 to 90+.
 * Initial condition: Varies by run, in three settings: low, medium and high
-* 
+* Population is subsampled to 5,000,000, which is highly likely to be representative of the dynamics. Numbers over 25 million are computationally infeasible for this model in it's current form.
