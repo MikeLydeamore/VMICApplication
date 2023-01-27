@@ -1,3 +1,4 @@
 montagu_data/*
 abm_inputs/*
 .DS_Store
+*.out
