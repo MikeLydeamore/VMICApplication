@@ -1,13 +1,23 @@
 ---
 title: "Agent based model VIMC documentation"
 date: "Last updated: `r Sys.Date()`"
-output: pdf
+output: pdf_document
 ---
     
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-* Age breaks: modelled in 5 year age bands from 0 to 85+. Vaccination in 5 year age bands from 0 to 90+.
-* Initial condition: Varies by run, in three settings: low, medium and high
-* Population is subsampled to 5,000,000, which is highly likely to be representative of the dynamics. Numbers over 25 million are computationally infeasible for this model in it's current form.
+* Model is an updated, but unreleased version of the model that allows for multistrain dynamics. Only a single strain has been modelled in these scenarios.
+* Age breaks: modelled in 1 year age bands as per provided dynamics files.
+* Vaccination is grouped  5 year age bands from 0 to 90+, in accordance with estimated vaccine efficacy parameters.
+* Assumed all vaccination occurs at the beginning of each year, for 4 doses with Pfizer, each of which occurs almost immediately (before cases are introduced). This assumption can be relaxed if guidance around the timing of vaccination rollout can be provided.
+* Initial condition: Varies by run, in two settings: low (100 introductions), and high (100 introductions). Multiple introductions, and introductions can be spread out over time pending guidance from the consortium.
+* Population is subsampled and simulated on 100,000 individuals which is highly likely to be representative of the dynamics. Numbers over 25 million are computationally infeasible for this model in it's current form.
+* Disability weights are as follows:
+    * Asymptomatic cases: 0
+    * Symptomatic cases (not hospitalised): 0.051
+    * Hospitalised but not admitted to ICU: 0.133
+    * Hospitalied with ICU stay: 0.675
+* Transmission potential set at 6.0, with "partial" TTIQ.
+* All other parameters are as per provided technical report.
